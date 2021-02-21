@@ -23,7 +23,7 @@ pipeline {
                 gitTool: 'Default',
                 submoduleCfg: [],
                 userRemoteConfigs: [[
-                    credentialsId: 'GitHub_william.torres',
+                    credentialsId: 'Github_jmurilloariza',
                     url: 'https://github.com/willtorber-ceiba/ceiba-bank-frontend.git'
                 ]]
             ])
