@@ -1,0 +1,23 @@
+<h3 class="display-8">Crear ticket de parqueo</h3>
+<app-notificacion *ngIf="notificacion" [data]="notificacion"></app-notificacion>
+<div class="jumbotron">
+    <form [formGroup]="ticketForm" (ngSubmit)="crearTicket()">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="placaVehiculo">Nombre Solicitante</label>
+                <input validar type="text" class="form-control" id="placaVehiculo" formControlName="placaVehiculo">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="tipoCredito">Tipo vehiculo</label>
+                <select validar class="form-control" id="tipoVehiculo" formControlName="tipoVehiculo">
+                    <option *ngFor="let tipo of tipos" [ngValue]="tipo.id">{{tipo.nombre}}</option>
+                </select>
+            </div>
+        </div>
+        <button id="btnCrearTicket" type="submit" [disabled]="ticketForm.invalid"
+            class="btn btn-primary float-sm-right">
+            Registrar
+        </button>
+    </form>
+</div>
+<br />
