@@ -24,7 +24,7 @@ pipeline {
                 submoduleCfg: [],
                 userRemoteConfigs: [[
                     credentialsId: 'Github_jmurilloariza',
-                    url: 'https://github.com/willtorber-ceiba/ceiba-bank-frontend.git'
+                    url: 'https://github.com/jmurilloariza/parking-ceiba-frontend.git'
                 ]]
             ])
         }
@@ -78,7 +78,7 @@ pipeline {
     }
     failure {
       echo 'This will run only if failed'
-      mail (to: 'william.torres@ceiba.com.co',subject: "Failed Pipeline:${currentBuild.fullDisplayName}", body: "Something is wrong with ${env.BUILD_URL}")
+      mail (to: 'jeferson.murillo@ceiba.com.co',subject: "Failed Pipeline:${currentBuild.fullDisplayName}", body: "Something is wrong with ${env.BUILD_URL}")
     }
     unstable {
       echo 'This will run only if the run was marked as unstable'
