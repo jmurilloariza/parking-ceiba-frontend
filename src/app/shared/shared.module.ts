@@ -27,7 +27,7 @@ import { NotificacionComponent } from './copmponents/notificacion/notificacion.c
     MensajeErrorCamposSubmitDirective,
     ReactiveFormsModule,
     FormsModule,
-    TrackByPipe, 
+    TrackByPipe,
     NotificacionComponent
   ]
 })

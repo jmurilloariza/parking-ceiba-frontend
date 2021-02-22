@@ -20,8 +20,7 @@ export class ListarTicketComponent implements OnInit {
   listarTickets(): void {
     this.ticketService.listar().subscribe(
       response => {
-        this.tickets = response
-        console.log(response);
+        this.tickets = response;
       });
   }
 

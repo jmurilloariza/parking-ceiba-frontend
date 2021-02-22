@@ -28,9 +28,9 @@ export class CrearTicketComponent implements OnInit {
 
   constructor(private ticketService: TicketService) {
     this.tipos = [
-      { id: 1, nombre: "Automovil" },
-      { id: 2, nombre: "Motocicleta" },
-    ]
+      { id: 1, nombre: 'Automovil' },
+      { id: 2, nombre: 'Motocicleta' }
+    ];
   }
 
   ngOnInit(): void {
@@ -40,8 +40,8 @@ export class CrearTicketComponent implements OnInit {
   private construirFormulario(): void {
     this.ticketForm = new FormGroup({
       placaVehiculo: new FormControl('', [
-        Validators.required, 
-        Validators.min(LONGITUD_MINIMA_PERMITIDA_TEXTO), 
+        Validators.required,
+        Validators.min(LONGITUD_MINIMA_PERMITIDA_TEXTO),
         Validators.max(LONGITUD_MAXIMA_PERMITIDA_TEXTO)
       ]),
       tipoVehiculo: new FormControl('', [Validators.required])
@@ -49,21 +49,23 @@ export class CrearTicketComponent implements OnInit {
   }
 
   private construirTicket(): Ticket {
-    const ticket: Ticket  = this.ticketForm.value;
+    const ticket: Ticket = this.ticketForm.value;
     return ticket;
   }
 
   crearTicket(): void {
     this.ticketService.guardar(this.construirTicket())
-    .subscribe(
-      success => {
-        this.notificacion = new Notificacion ('¡Ticket Creado!',
-         `El numero del ticket es: ${success['valor']}`, true);
-      },
-      error => {
-        this.notificacion = new Notificacion ('Error :(', `${error.error.mensaje}`, false);
-      }
-    );
+      .subscribe(
+        success => {
+          const key = 'valor';
+          const valor = success[key];
+          this.notificacion = new Notificacion('¡Ticket Creado!',
+            `El numero del ticket es: ${valor}`, true);
+        },
+        error => {
+          this.notificacion = new Notificacion('Error :(', `${error.error.mensaje}`, false);
+        }
+      );
     this.ticketForm.reset();
   }
 }

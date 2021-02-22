@@ -11,15 +11,9 @@ export class NotificacionComponent implements OnInit {
   @Input()
   data: Notificacion;
 
-  constructor() {
-    
-    // this.data = new Notificacion();
-  }
-  
+  constructor() { }
+
   ngOnInit(): void {
-    console.log("Notificacion");
-    
-    console.log(this.data);
   }
 
 }

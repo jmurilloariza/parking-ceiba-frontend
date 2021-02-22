@@ -80,7 +80,7 @@ describe('CrearTicketComponent', () => {
     // Assert
     expect(component.notificacion).toEqual(notificacion);
   });
- 
+
   it('Debería fallar el guardado del ticket obtener el mensaje de error', () => {
     // Arrange
     const response = {

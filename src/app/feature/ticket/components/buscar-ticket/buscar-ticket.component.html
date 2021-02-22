@@ -1,7 +1,7 @@
 <h3 class="display-8">Buscar ticket</h3>
 <app-notificacion *ngIf="notificacion" [data]="notificacion"></app-notificacion>
 <div class="jumbotron">
-    <form [formGroup]="ticketForm" (ngSubmit)="buscarTicket()">
+    <form [formGroup]="ticketForm">
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="id">N° Ticket</label>

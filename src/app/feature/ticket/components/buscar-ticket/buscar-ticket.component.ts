@@ -24,8 +24,4 @@ export class BuscarTicketComponent implements OnInit {
     });
   }
 
-  public buscarTicket(){
-    
-  }
-
 }
