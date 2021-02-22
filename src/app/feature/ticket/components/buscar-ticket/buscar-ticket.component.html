@@ -1,1 +1,19 @@
-<p>buscar-ticket works!</p>
+<h3 class="display-8">Buscar ticket</h3>
+<app-notificacion *ngIf="notificacion" [data]="notificacion"></app-notificacion>
+<div class="jumbotron">
+    <form [formGroup]="ticketForm" (ngSubmit)="buscarTicket()">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="id">N° Ticket</label>
+                <input validar type="number" class="form-control" id="id" formControlName="id">
+            </div>
+            <div class="form-group col-md-2">
+            </div>
+        </div>
+        <button id="btnCrearTicket" type="submit" [disabled]="ticketForm.invalid"
+            class="btn btn-primary float-sm-right">
+            Registrar
+        </button>
+    </form>
+</div>
+<br />
