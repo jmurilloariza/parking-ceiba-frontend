@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Notificacion } from '@shared/copmponents/notificacion/model/notificacion';
 import { Ticket } from '@ticket/shared/model/ticket';
 import { TicketService } from '@ticket/shared/service/ticket.service';
 
@@ -10,6 +11,7 @@ import { TicketService } from '@ticket/shared/service/ticket.service';
 export class ListarTicketComponent implements OnInit {
 
   tickets: Ticket[] = [];
+  notificacion: Notificacion;
 
   constructor(private ticketService: TicketService) { }
 

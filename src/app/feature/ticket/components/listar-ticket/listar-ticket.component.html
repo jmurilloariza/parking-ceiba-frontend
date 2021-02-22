@@ -1,5 +1,6 @@
 <br>
 <h3>Tickets registrados</h3>
+<app-notificacion *ngIf="notificacion" [data]="notificacion"></app-notificacion>
 <br>
 <div class="table-responsive-lg">
   <table class="table table-hover" *ngIf="tickets.length > 0">
@@ -11,7 +12,6 @@
         <th scope="col">Hora Entrada</th>
         <th scope="col">Hora Salida</th>
         <th scope="col">Total Pagado</th>
-        <th>Acciones</th>
       </tr>
     </thead>
     <tbody>
@@ -22,9 +22,6 @@
         <td>{{ ticket.horaEntrada }}</td>
         <td>{{ ticket.horaSalida }}</td>
         <td>{{ ticket.totalPagado | currency }}</td>
-        <td>
-          <button type="button" class="btn btn-success btn-sm">Pagar</button>
-        </td>
       </tr>
     </tbody>
   </table>

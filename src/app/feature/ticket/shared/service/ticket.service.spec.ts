@@ -28,10 +28,10 @@ describe('TicketService', () => {
     expect(ticketService).toBeTruthy();
   });
 
-  it('Deberia generar una solicitud', () => {
+  it('Deberia crear un ticket', () => {
     // Arrange
     const dummyTicket = new Ticket('1', 'UNA008', '1', '2020-12-12 23:32:22', '', 150000);
-    const dummyResponse = {valor: 1};
+    const dummyResponse = { valor: 1 };
     // Act
     service.guardar(dummyTicket).subscribe((success) => {
       // Assert
@@ -41,7 +41,23 @@ describe('TicketService', () => {
     // Assert
     expect(request.request.method).toBe('POST');
     expect(request.request.responseType).toBe('json');
-    request.event(new HttpResponse<any>({body: dummyResponse}));
+    request.event(new HttpResponse<any>({ body: dummyResponse }));
+  });
+
+  it('Deberia pagar un ticket', () => {
+    // Arrange
+    const dummyTicket = new Ticket('1', '', '', '', '', 0);
+    const dummyResponse = { valor: 1600 };
+    // Act
+    service.pagarTicket(dummyTicket).subscribe((success) => {
+      // Assert
+      expect(success).toEqual(dummyResponse);
+    });
+    const request = httpMock.expectOne(`${ENDPOINT}/pagar/${dummyTicket.id}`);
+    // Assert
+    expect(request.request.method).toBe('POST');
+    expect(request.request.responseType).toBe('json');
+    request.event(new HttpResponse<any>({ body: dummyResponse }));
   });
 
   afterAll(() => {

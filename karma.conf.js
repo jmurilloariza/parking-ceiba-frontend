@@ -17,7 +17,7 @@ module.exports = function (config) {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
     remapIstanbulReporter: {
-      dir : 'reports/test-results/coverage',
+      dir: 'reports/test-results/coverage',
       reports: {
         html: 'coverage',
         lcovonly: 'reports/test-results/coverage/coverage.lcov'
@@ -28,7 +28,7 @@ module.exports = function (config) {
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true
     },
-    reporters: ['progress', 'kjhtml','junit'],
+    reporters: ['progress', 'kjhtml', 'junit'],
     htmlReporter: {
       outputFile: 'reports/unit/units.html',
 
@@ -42,12 +42,20 @@ module.exports = function (config) {
       outputFile: 'test-results.xml',
       suite: '',
       useBrowserName: false
-   },
+    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['ChromeHeadlessNoSandbox'],
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: "ChromeHeadless",
+        flags: [
+          "--no-sandbox"
+        ]
+      }
+    },
     singleRun: false,
     restartOnFileChange: true
   });
