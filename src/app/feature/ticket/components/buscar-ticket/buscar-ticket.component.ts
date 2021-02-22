@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Notificacion } from '@shared/copmponents/notificacion/model/notificacion';
-import { Ticket } from '@ticket/shared/model/ticket';
 import { TicketService } from '@ticket/shared/service/ticket.service';
 
 @Component({
