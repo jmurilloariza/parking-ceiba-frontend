@@ -25,13 +25,8 @@ export class BuscarTicketComponent implements OnInit {
     });
   }
 
-  private construirTicket(): Ticket {
-    const ticket: Ticket = this.ticketForm.value;
-    return ticket;
-  }
-
   public pagarTicket() {
-    this.ticketService.pagarTicket(this.construirTicket())
+    this.ticketService.pagarTicket(this.ticketForm.value)
       .subscribe(
         success => {
           const key = 'valor';

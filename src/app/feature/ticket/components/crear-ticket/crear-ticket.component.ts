@@ -47,13 +47,8 @@ export class CrearTicketComponent implements OnInit {
     });
   }
 
-  private construirTicket(): Ticket {
-    const ticket: Ticket = this.ticketForm.value;
-    return ticket;
-  }
-
   crearTicket(): void {
-    this.ticketService.guardar(this.construirTicket())
+    this.ticketService.guardar(this.ticketForm.value)
       .subscribe(
         success => {
           const key = 'valor';

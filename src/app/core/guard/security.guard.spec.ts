@@ -12,4 +12,9 @@ describe('SecurityGuard', () => {
   it('should ...', inject([SecurityGuard], (guard: SecurityGuard) => {
     expect(guard).toBeTruthy();
   }));
+
+  it('Debería el Guard permitir el acceso', inject([SecurityGuard], (guard: SecurityGuard) => {
+    expect(guard.canActivate()).toBeTruthy();
+  }));
+
 });
