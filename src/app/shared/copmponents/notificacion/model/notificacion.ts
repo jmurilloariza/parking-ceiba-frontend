@@ -3,7 +3,7 @@ export class Notificacion {
   message: string;
   status: boolean;
 
-  constructor(title: string = '', message: string = '', status: boolean = false) {
+  constructor(title: string, message: string, status: boolean) {
     this.title = title;
     this.message = message;
     this.status = status;

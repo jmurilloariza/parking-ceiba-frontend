@@ -3,7 +3,7 @@
 <app-notificacion *ngIf="notificacion" [data]="notificacion"></app-notificacion>
 <br>
 <div class="table-responsive-lg">
-  <table class="table table-hover" *ngIf="tickets.length > 0">
+  <table class="table table-hover" *ngIf="tickets.length > 0" aria-describedby="Lista de ticket creados">
     <thead>
       <tr>
         <th scope="col">#</th>

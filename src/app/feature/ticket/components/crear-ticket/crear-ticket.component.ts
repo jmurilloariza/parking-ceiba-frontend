@@ -16,8 +16,7 @@ const LONGITUD_MAXIMA_PERMITIDA_TEXTO = 8;
 
 @Component({
   selector: 'app-crear-ticket',
-  templateUrl: './crear-ticket.component.html',
-  styleUrls: ['./crear-ticket.component.css']
+  templateUrl: './crear-ticket.component.html'
 })
 export class CrearTicketComponent implements OnInit {
 

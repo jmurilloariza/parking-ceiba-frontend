@@ -12,19 +12,19 @@ export class TicketService {
     this.URL_TICKET = '/tickets';
   }
 
-  public guardar(ticket: Ticket): any {
-    return this.http.doPost<Ticket, any>(`${environment.endpoint}${this.URL_TICKET}`, ticket,
+  public guardar(ticket: Ticket) {
+    return this.http.doPost<Ticket, object>(`${environment.endpoint}${this.URL_TICKET}`, ticket,
       this.http.optsName('crear/actualizar tickets'));
   }
 
-  public listar(): any {
+  public listar() {
     return this.http.doGet<Ticket[]>(`${environment.endpoint}${this.URL_TICKET}`,
       this.http.optsName('Consultar tickets')
     );
   }
 
-  public pagarTicket(ticket: Ticket): any {
-    return this.http.doPost<Ticket, any>(`${environment.endpoint}${this.URL_TICKET}/pagar/${ticket.id}`, ticket,
+  public pagarTicket(ticket: Ticket) {
+    return this.http.doPost<Ticket, object>(`${environment.endpoint}${this.URL_TICKET}/pagar/${ticket.id}`, ticket,
       this.http.optsName('Pagar ticket')
     );
   }

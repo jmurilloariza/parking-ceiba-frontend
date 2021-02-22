@@ -5,8 +5,7 @@ import { TicketService } from '@ticket/shared/service/ticket.service';
 
 @Component({
   selector: 'app-listar-ticket',
-  templateUrl: './listar-ticket.component.html',
-  styleUrls: ['./listar-ticket.component.css']
+  templateUrl: './listar-ticket.component.html'
 })
 export class ListarTicketComponent implements OnInit {
 

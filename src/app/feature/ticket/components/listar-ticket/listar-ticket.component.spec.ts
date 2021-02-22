@@ -68,7 +68,7 @@ describe('ListarTicketComponent', () => {
     // Act
     component.ngOnInit();
     // Assert
-    const element: HTMLElement = fixture.debugElement.query(await By.css('.alert')).nativeElement;
+    const element: HTMLElement = fixture.debugElement.query(By.css('.alert')).nativeElement;
     expect(element.innerHTML).toContain('¡No hay tickets registrados en el sistema!');
   });
 

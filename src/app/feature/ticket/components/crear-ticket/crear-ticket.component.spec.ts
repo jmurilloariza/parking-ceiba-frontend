@@ -54,8 +54,10 @@ describe('CrearTicketComponent', () => {
 
   it('Debería llamarse el servicio que guarda las solicitudes', () => {
     // Arrange
+    const idFake = 1;
+    const response = { valor: idFake};
     const spy = spyOn(ticketService, 'guardar').and.returnValue(
-      of({})
+      of(response)
     );
     // Act
     component.crearTicket();
