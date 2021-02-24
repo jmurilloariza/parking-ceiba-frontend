@@ -1,7 +1,7 @@
-import { AppPage } from "../app.po";
-import { NavbarPage } from "../page/navbar/navbar.po";
-import { NotificacionPage } from "../page/notificacion/notificacion.po";
-import { TicketPage } from "../page/ticket/ticket.po";
+import { AppPage } from '../app.po';
+import { NavbarPage } from '../page/navbar/navbar.po';
+import { NotificacionPage } from '../page/notificacion/notificacion.po';
+import { TicketPage } from '../page/ticket/ticket.po';
 
 describe('workspace-project Ticket', () => {
 

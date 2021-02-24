@@ -23,9 +23,9 @@ export class NotificacionComponent implements OnInit {
       this.notificacion = msj;
 
       msj.status ? this.classTipoAlerta = 'alert-success'
-        : this.classTipoAlerta = 'alert-danger'
+        : this.classTipoAlerta = 'alert-danger';
 
-      msj.message == '' && msj.title == '' ? this.classHide = 'd-none'
+      msj.message === '' && msj.title === '' ? this.classHide = 'd-none'
         : this.classHide = '';
     });
   }

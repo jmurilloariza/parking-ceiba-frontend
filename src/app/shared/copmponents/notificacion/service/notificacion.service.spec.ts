@@ -7,10 +7,6 @@ describe('NotificacionService', () => {
     let notificacion: Notificacion;
 
     beforeEach(() => {
-        // const injector = TestBed.configureTestingModule({
-        //   imports: [],
-        //   providers: [NotificacionService, HttpService]
-        // });
         service = TestBed.inject(NotificacionService);
     });
 
@@ -24,10 +20,7 @@ describe('NotificacionService', () => {
     it('Debería emitir una notificacion', () => {
         notificacion = new Notificacion('', '', false);
         service.emite(notificacion);
-
         service.escucha().subscribe(msj => {
-            console.log(msj);
-            
             expect(msj).toEqual(notificacion);
         });
     });

@@ -31,11 +31,6 @@ describe('NotificacionComponent', () => {
     expect( element.innerHTML ).toEqual('');
   });
 
-  // it('Debe ser una notificación positiva', () => {
-  //   const element: HTMLElement = fixture.debugElement.query( By.css('.alert-success') ).nativeElement;
-  //   expect( element ).toBeTruthy();
-  // });
-
   afterAll(() => {
     TestBed.resetTestingModule();
   });
