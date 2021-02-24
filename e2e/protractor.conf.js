@@ -13,17 +13,15 @@ exports.config = {
   specs: [
     './src/**/*.e2e-spec.ts'
   ],
-  capabilities: {
+  capabilities: { // Browser sobre el que se hace el testeo
+    browserName: 'chrome', // Se define Chrome como navegador para las pruebas
     chromeOptions: {
       args: [
-        '--headless',
-        '--disable-gpu',
-        '--window-size=800x600',
-        '--disable-dev-shm-usage',
-        '--no-sandbox'
+        "--headless",
+        "--disable-gpu",
+        "--window-size=1280,720"
       ]
-    },
-    browserName: "ChromeHeadless"
+    }
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',

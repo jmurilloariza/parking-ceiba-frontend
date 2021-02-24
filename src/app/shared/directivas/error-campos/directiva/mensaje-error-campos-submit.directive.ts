@@ -16,7 +16,7 @@ export class MensajeErrorCamposSubmitDirective {
     shareReplay(1),
   );
 
-  constructor(private host: ElementRef<HTMLFormElement>) {}
+  constructor(private host: ElementRef<HTMLFormElement>) { }
 
   get element() {
     return this.host.nativeElement;

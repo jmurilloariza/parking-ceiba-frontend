@@ -52,7 +52,7 @@ describe('CrearTicketComponent', () => {
     expect(component.ticketForm.valid).toBeTruthy();
   });
 
-  it('Debería llamarse el servicio que guarda las solicitudes', () => {
+  it('Debería llamarse el servicio que guarda el ticket', () => {
     // Arrange
     const idFake = 1;
     const response = { valor: idFake};
@@ -66,7 +66,7 @@ describe('CrearTicketComponent', () => {
   });
 
 
-  it('Debería guardar la solicitud y obtenerse el ID de la solicitud', () => {
+  it('Debería guardar el ticket y obtenerse el ID del ticket', () => {
     // Arrange
     const idFake = 1;
     const response = { valor: idFake };
